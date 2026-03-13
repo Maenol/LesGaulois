@@ -2,6 +2,7 @@ package test_fonctionnel;
 
 import personnage.Gaulois;
 import personnage.Romain;
+import personnage.Druide;
 
 public class TestGaulois {
 	public static void main (String[] args) {
@@ -19,6 +20,16 @@ public class TestGaulois {
 		+ obelix.getNom() + " tombent nez à nez sur le romain " + minus.getNom() + ".");
 		while (minus.getForce() > 0) {
 			asterix.frapper(minus);
+		}
+		Romain brutus;
+		brutus = new Romain("Brutus", 14);
+		Druide panoramix;
+		panoramix = new Druide("Panoramix", 2);
+		panoramix.fabriquerPotion(4, 3);
+		panoramix.boosterGaulois(obelix);
+		panoramix.boosterGaulois(asterix);
+		for (int i = 0 ; i < 3 ; i++) {
+			asterix.frapper(brutus);
 		}
 	}
 }

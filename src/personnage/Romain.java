@@ -16,10 +16,6 @@ public class Romain {
 		return force;
 	}
 
-	public void setForce(int force) {
-		this.force = force;
-	}
-
 	public void parler(String texte) {
 		System.out.println(prendreParole() + "\"" + texte + "\"");
 	}
