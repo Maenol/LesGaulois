@@ -12,11 +12,28 @@ public class Romain {
 		return nom;
 	}
 	
+	public int getForce() {
+		return force;
+	}
+
+	public void setForce(int force) {
+		this.force = force;
+	}
+
 	public void parler(String texte) {
 		System.out.println(prendreParole() + "\"" + texte + "\"");
 	}
 	
 	private String prendreParole() {
 		return"Le romain " + nom + " : ";
+	}
+	
+	public void recevoirCoup (int forceCoup) {
+		this.force = this.force - forceCoup;
+		if (this.force == 0) {
+			parler ("J'abandonne");
+		} else {
+			parler ("Aïe");
+		}
 	}
 }

@@ -21,7 +21,13 @@ public class Gaulois {
 		return "Le gaulois" + nom + " : ";
 	}
 	
-	
+	public void frapper (Romain romain) {
+		String nomRomain = romain.getNom();
+		System.out.println(nom + " envoire un grand coup dans la machoire de " 
+		+ nomRomain);
+		int forceCoup = force/3;
+		romain.recevoirCoup(forceCoup);
+	}
 	
 	@Override
 	public String toString() {
