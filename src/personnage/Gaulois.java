@@ -26,7 +26,7 @@ public class Gaulois {
 		String nomRomain = romain.getNom();
 		System.out.println(nom + " envoire un grand coup dans la machoire de " 
 		+ nomRomain);
-		int forceCoup = (force/3)*effetPotion;
+		int forceCoup = (this.force*this.effetPotion)/3;
 		romain.recevoirCoup(forceCoup);
 		if (this.effetPotion > 1) {
 			this.effetPotion = this.effetPotion - 1;
