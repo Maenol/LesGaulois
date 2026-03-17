@@ -25,11 +25,28 @@ public class Romain {
 	}
 	
 	public void recevoirCoup (int forceCoup) {
+		assert forceCoup >=0;
+		int force1 = this.force;
 		this.force = this.force - forceCoup;
 		if (this.force <= 0) {
 			parler ("J'abandonne");
 		} else {
 			parler ("Aïe");
 		}
+		assert force1 >= this.force;
+	}
+	
+	private boolean isInvariantVerified() {
+		if (this.force >= 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public static void main(String[] args) {
+		Romain minus;
+		minus = new Romain("Minus", 6);
+		assert minus.isInvariantVerified();
 	}
 }
