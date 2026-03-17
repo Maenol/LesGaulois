@@ -1,7 +1,12 @@
 package personnage;
+
+import objets.Equipement;
+
 public class Romain {
 	private String nom;
 	private int force;
+	private Equipement[] equipement = new Equipement[2];
+	private int nbEquipement = 0;
 	
 	public Romain(String nom, int force) {
 		this.nom = nom;
@@ -44,9 +49,13 @@ public class Romain {
 		}
 	}
 	
+	
 	public static void main(String[] args) {
 		Romain minus;
 		minus = new Romain("Minus", 6);
 		assert minus.isInvariantVerified();
+		System.out.println(Equipement.CASQUE);
+		System.out.println(Equipement.BOUCLIER);
 	}
+	
 }
