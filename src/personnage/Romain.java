@@ -49,6 +49,30 @@ public class Romain {
 		}
 	}
 	
+	public void sEquiper(Equipement equipement) {
+		switch (this.nbEquipement) {
+		case 2 :
+			System.out.println("Le soldat " + this.nom +"  est déjà bien protégé !");
+			break;
+		case 1 :
+			if (this.equipement[0] == equipement) {
+				System.out.println("Le soldat " + this.nom + " possède déjà un " + equipement + ".");
+			} else {
+				ajouterEquipement(equipement);
+			}
+			break;
+		default :
+			ajouterEquipement(equipement);
+			break;
+		}
+	}
+
+	private void ajouterEquipement(Equipement equipement) {
+		this.equipement[nbEquipement] = equipement;
+		nbEquipement ++;
+		System.out.println("Le soldat " + this.nom + " s'équipde d'un " + equipement + ".");
+	}
+	
 	
 	public static void main(String[] args) {
 		Romain minus;
@@ -56,6 +80,10 @@ public class Romain {
 		assert minus.isInvariantVerified();
 		System.out.println(Equipement.CASQUE);
 		System.out.println(Equipement.BOUCLIER);
+		minus.sEquiper(Equipement.CASQUE);
+		minus.sEquiper(Equipement.CASQUE);
+		minus.sEquiper(Equipement.BOUCLIER);
+		minus.sEquiper(Equipement.CASQUE);
 	}
 	
 }
