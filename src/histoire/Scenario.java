@@ -5,7 +5,7 @@ import personnage.Romain;
 import personnage.Druide;
 import objets.Equipement;
 
-//import village_gaulois.Musee;
+import village_gaulois.Musee;
 
 public class Scenario {
 
@@ -40,16 +40,18 @@ public class Scenario {
 		    asterix.frapper(minus);
 		    
 		} while (minus.getForce() > 0 && minus.getForce() < ancienneForce);
-		
-//		PARTIE 5 : a decommenter
-//		milexcus.parler("UN GAU... UN GAUGAU...");
-//		do {
-//			obelix.frapper(milexcus);
-//		} while (milexcus.getForce() > 0);
+
+		milexcus.parler("UN GAU... UN GAUGAU...");
+		do {
+			obelix.frapper(milexcus);
+		} while (milexcus.getForce() > 0);
 
 
-//		Musee musee = new Musee();
-//		obelix.faireUneDonnation(musee);
+		Musee musee = new Musee();
+		obelix.faireUneDonnation(musee);
+		String testExtraction;
+		testExtraction = musee.extraireInstructionsOcaml();
+		System.out.println(testExtraction);
 
 	}
 

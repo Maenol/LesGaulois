@@ -1,5 +1,6 @@
 package personnage;
 
+import village_gaulois.Musee;
 import village_gaulois.Village;
 import objets.Equipement;
 
@@ -90,6 +91,24 @@ public class Gaulois {
 		        System.out.println(nom + " ne peut plus prendre de trophées !");
 		        break;
 		    }
+		}
+	}
+	
+	public void faireUneDonnation (Musee musee) {
+		if (nbTrophees == 0) {
+			parler("Désolé, je n'ai pas de trophée.");
+		} else {
+			String texte;
+			texte = "Je donne au musée tout mes trophées : \n";
+			for (int i = 0; i < nbTrophees; i++) {
+				if (trophees[i] == Equipement.BOUCLIER) {
+					texte += "- Bouclier\n";
+				} else {
+					texte += "- Casque\n";
+				}
+				musee.donnerTrophee(this, trophees[i]);
+			}
+			parler(texte);
 		}
 	}
 
