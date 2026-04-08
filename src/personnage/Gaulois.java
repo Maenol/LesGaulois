@@ -77,17 +77,22 @@ public class Gaulois {
 	public void frapper(Romain romain) {
 		System.out.println(nom + " envoie un grand coup dans la mâchoire de "
 		+ romain.getNom());
-		Equipement[] autreTrophees = romain.recevoirCoup((force / 3) * effetPotion);
+		Equipement[] autreTrophees = romain.recevoirCoup((force / 2) * effetPotion);
 		effetPotion--;
 		if (effetPotion < 1) {
 		effetPotion = 1;
 		}
-		for (int i = 0; autreTrophees != null && i < autreTrophees.length; i++, nbTrophees++) {
-			this.trophees[nbTrophees] = autreTrophees[i];
+		for (int i = 0; autreTrophees != null && i < autreTrophees.length; i++) {
+		    if (nbTrophees < trophees.length) {
+		        this.trophees[nbTrophees] = autreTrophees[i];
+		        nbTrophees++;
+		    } else {
+		        System.out.println(nom + " ne peut plus prendre de trophées !");
+		        break;
+		    }
 		}
 	}
 
-	
 	public static void main(String[] args) {
 		Gaulois asterix;
 		asterix = new Gaulois("Astérix", 8);

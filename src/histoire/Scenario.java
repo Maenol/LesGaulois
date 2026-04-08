@@ -25,9 +25,21 @@ public class Scenario {
 		minus.sEquiper(Equipement.CASQUE);
 		milexcus.sEquiper(Equipement.CASQUE);
 		minus.parler("UN GAU... UN GAUGAU...");
+		int ancienneForce;
+
 		do {
-			asterix.frapper(minus);
-		} while (minus.getForce() > 0);
+		    ancienneForce = minus.getForce();
+		    asterix.frapper(minus);
+
+		    if (minus.getForce() == ancienneForce) {
+		        minus.parler("Alors " + asterix.getNom() + " on fait moins le malin face à mon équipement, Hi ! Hi !");
+		        obelix.parler(asterix.getNom() + ", tu veux un peu d'aide ?");
+		        obelix.frapper(minus);
+		        break;
+		    }
+		    asterix.frapper(minus);
+		    
+		} while (minus.getForce() > 0 && minus.getForce() < ancienneForce);
 		
 //		PARTIE 5 : a decommenter
 //		milexcus.parler("UN GAU... UN GAUGAU...");
